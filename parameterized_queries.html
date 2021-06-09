@@ -13,7 +13,8 @@ And uses the <code class="highlighter-rouge">ParameterMapper</code> typeclass to
 <span class="k">val</span> <span class="nv">query</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: Test { name: $name })"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// query: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (a: Test { name: $p1 })",</span>
-<span class="c1">//   Map("p1" -&gt; neotypes.types$QueryParam@23512b)</span>
+<span class="c1">//   Map("p1" -&gt; neotypes.types$QueryParam@23512b),</span>
+<span class="c1">//   List(24)</span>
 <span class="c1">// )</span>
 
 <span class="nf">assert</span><span class="o">(</span><span class="nv">query</span><span class="o">.</span><span class="py">query</span> <span class="o">==</span> <span class="s">"CREATE (a: Test { name: $p1 })"</span><span class="o">)</span>
@@ -30,24 +31,26 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="k">val</span> <span class="nv">born</span> <span class="k">=</span> <span class="mi">1980</span>
 <span class="c1">// born: Int = 1980</span>
 <span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: Test { name: $name, "</span> <span class="o">+</span> <span class="n">c</span><span class="s">"born: $born })"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@ca9b7ae</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@6254b689</span>
 <span class="nv">query1</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res2: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
-<span class="c1">//   "CREATE (a: Test { name: $p1,  born: $p2 })",</span>
+<span class="c1">//   "CREATE (a: Test { name: $p1, born: $p2 })",</span>
 <span class="c1">//   Map(</span>
 <span class="c1">//     "p1" -&gt; neotypes.types$QueryParam@23512b,</span>
 <span class="c1">//     "p2" -&gt; neotypes.types$QueryParam@7bc</span>
-<span class="c1">//   )</span>
+<span class="c1">//   ),</span>
+<span class="c1">//   List(35, 24)</span>
 <span class="c1">// )</span>
 
 <span class="k">val</span> <span class="nv">LABEL</span> <span class="k">=</span> <span class="s">"User"</span>
 <span class="c1">// LABEL: String = "User"</span>
 <span class="k">val</span> <span class="nv">query2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: "</span> <span class="o">+</span> <span class="nc">LABEL</span> <span class="o">+</span> <span class="n">c</span><span class="s">"{ name: $name })"</span>
-<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@5b247c64</span>
+<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@4fc2f99e</span>
 <span class="nv">query2</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res3: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
-<span class="c1">//   "CREATE (a:  User { name: $p1 })",</span>
-<span class="c1">//   Map("p1" -&gt; neotypes.types$QueryParam@23512b)</span>
+<span class="c1">//   "CREATE (a: User { name: $p1 })",</span>
+<span class="c1">//   Map("p1" -&gt; neotypes.types$QueryParam@23512b),</span>
+<span class="c1">//   List(24)</span>
 <span class="c1">// )</span>
 </code></pre></div></div>
 
@@ -67,27 +70,29 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="c1">// hasCat: HasCat = HasCat(2010)</span>
 
 <span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (u: User { $user })"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@4379f290</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@3d0dc0a1</span>
 <span class="nv">query1</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res4: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
-<span class="c1">//   "CREATE (u: User {  name: $p1, born: $p2 })",</span>
+<span class="c1">//   "CREATE (u: User { name: $p1, born: $p2 })",</span>
 <span class="c1">//   Map(</span>
 <span class="c1">//     "p1" -&gt; neotypes.types$QueryParam@23512b,</span>
 <span class="c1">//     "p2" -&gt; neotypes.types$QueryParam@7bc</span>
-<span class="c1">//   )</span>
+<span class="c1">//   ),</span>
+<span class="c1">//   List(35, 24)</span>
 <span class="c1">// )</span>
 
 <span class="k">val</span> <span class="nv">query2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (u: User { $user })-[r: HAS_CAT { $hasCat }]-&gt;(c: Cat { $cat }) RETURN r"</span>
-<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@6cec2570</span>
+<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@b0af304</span>
 <span class="nv">query2</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">HasCat</span><span class="o">]</span>
 <span class="c1">// res5: neotypes.DeferredQuery[HasCat] = DeferredQuery(</span>
-<span class="c1">//   "CREATE (u: User {  name: $p1, born: $p2 })-[r: HAS_CAT {  since: $p3 }]-&gt;(c: Cat {  tag: $p4 }) RETURN r",</span>
+<span class="c1">//   "CREATE (u: User { name: $p1, born: $p2 })-[r: HAS_CAT { since: $p3 }]-&gt;(c: Cat { tag: $p4 }) RETURN r",</span>
 <span class="c1">//   Map(</span>
 <span class="c1">//     "p1" -&gt; neotypes.types$QueryParam@23512b,</span>
 <span class="c1">//     "p2" -&gt; neotypes.types$QueryParam@7bc,</span>
 <span class="c1">//     "p3" -&gt; neotypes.types$QueryParam@7da,</span>
 <span class="c1">//     "p4" -&gt; neotypes.types$QueryParam@a59194b0</span>
-<span class="c1">//   )</span>
+<span class="c1">//   ),</span>
+<span class="c1">//   List(86, 63, 35, 24)</span>
 <span class="c1">// )</span>
 </code></pre></div></div>
 </div></div></section></main><footer id="site-footer"><div class="container"><div class="row"><div class="col-xs-6"><p>neotypes is designed and developed by <a href="" target="_blank" rel="noopener noreferrer">neotypes</a></p></div><div class="col-xs-6"><p class="text-right"><a href="https://github.com/neotypes/neotypes" target="_blank" rel="noopener noreferrer"><span class="fa fa-github"></span>View on GitHub</a></p></div></div><div class="row"><div class="col-xs-6"><p>Website built with <a href="https://47degrees.github.io/sbt-microsites/" target="_blank" rel="noopener noreferrer">sbt-microsites</a> - © 2019 <a href="https://www.47deg.com/" target="_blank" rel="noopener noreferrer">47 Degrees</a></p></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/neotypes/highlight/highlight.pack.js"></script><script src="/neotypes/lunr/lunr.js"></script><script>

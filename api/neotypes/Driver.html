@@ -271,8 +271,8 @@
                         <a href="QueryArgMapper.html" title="">QueryArgMapper</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
-                        <a class="trait" href="QueryOrgMappersLowPriority.html" title=""></a>
-                        <a href="QueryOrgMappersLowPriority.html" title="">QueryOrgMappersLowPriority</a>
+                        <a class="trait" href="QueryArgMappersLowPriority.html" title=""></a>
+                        <a href="QueryArgMappersLowPriority.html" title="">QueryArgMappersLowPriority</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Stream$.html" title=""></a>
                         <a class="trait" href="Stream.html" title=""></a>
@@ -336,11 +336,11 @@
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A neotypes driver for accessing the neo4j graph database
-A driver wrapped in the resource type can be created using the neotypes GraphDatabase</p><pre><span class="kw">val</span> driver = GraphDatabase.driver[F](<span class="lit">"bolt://localhost:7687"</span>)</pre></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type for driver</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/neotypes/neotypes/tree/master/core/src/main/scala/neotypes/Driver.scala" target="_blank">Driver.scala</a></dd></dl><div class="toggleContainer block">
+A driver wrapped in the resource type can be created using the neotypes GraphDatabase</p><pre><span class="kw">val</span> driver = GraphDatabase.driver[F](<span class="lit">"bolt://localhost:7687"</span>)</pre></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type for driver</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/neotypes/neotypes/tree/main/core/src/main/scala/neotypes/Driver.scala" target="_blank">Driver.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.13/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.14/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
         </div><div class="toggleContainer block">
             <span class="toggle">
               Known Subclasses
@@ -407,7 +407,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">close</span><span class="result">: <span class="extype" name="neotypes.Driver.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.13/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+        <span class="name">close</span><span class="result">: <span class="extype" name="neotypes.Driver.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.14/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
       </span>
       
       <p class="shortcomment cmt">Close the resources assigned to the neo4j driver.</p><div class="fullcomment"><div class="comment cmt"><p>Close the resources assigned to the neo4j driver.
@@ -424,7 +424,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">metrics</span><span class="result">: <span class="extype" name="neotypes.Driver.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.2.4/org/neo4j/driver/ConnectionPoolMetrics.html#org.neo4j.driver.ConnectionPoolMetrics" class="extype" name="org.neo4j.driver.ConnectionPoolMetrics">ConnectionPoolMetrics</a>]]</span>
+        <span class="name">metrics</span><span class="result">: <span class="extype" name="neotypes.Driver.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.3.1/org/neo4j/driver/ConnectionPoolMetrics.html#org.neo4j.driver.ConnectionPoolMetrics" class="extype" name="org.neo4j.driver.ConnectionPoolMetrics">ConnectionPoolMetrics</a>]]</span>
       </span>
       
       
@@ -460,6 +460,40 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
       </span>
       
       
+    </li><li name="neotypes.Driver#transactionConfig" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="transactionConfig:neotypes.TransactionConfig"></a><a id="transactionConfig:TransactionConfig"></a>
+      <span class="permalink">
+      <a href="../neotypes/Driver.html#transactionConfig:neotypes.TransactionConfig" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">transactionConfig</span><span class="result">: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>
+      </span>
+      
+      
+    </li><li name="neotypes.Driver#withTransactionConfig" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="withTransactionConfig(config:neotypes.TransactionConfig):neotypes.Driver[F]"></a><a id="withTransactionConfig(TransactionConfig):Driver[F]"></a>
+      <span class="permalink">
+      <a href="../neotypes/Driver.html#withTransactionConfig(config:neotypes.TransactionConfig):neotypes.Driver[F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withTransactionConfig</span><span class="params">(<span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="result">: <a href="" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.Driver.F">F</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Creates a new driver instance using the provided transaction configuration as default.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new driver instance using the provided transaction configuration as default. NB. This does NOT create
+a new instance of the underlying Java driver.
+</p></div></div>
     </li></ol>
             </div>
 
@@ -478,7 +512,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.13/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.14/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -494,7 +528,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -510,7 +544,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.13/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.14/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -566,7 +600,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -582,7 +616,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.13/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.14/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -598,7 +632,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -639,7 +673,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
@@ -658,7 +692,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
@@ -674,7 +708,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -690,7 +724,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -709,7 +743,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -792,7 +826,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -814,7 +848,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.13/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="https://www.scala-lang.org/api/2.12.13/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.14/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="https://www.scala-lang.org/api/2.12.14/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -836,7 +870,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.13/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.13/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.12.14/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.14/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -861,7 +895,7 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
         <div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.13/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></h3>
+              <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.14/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></h3>
             </div>
         
         </div>
