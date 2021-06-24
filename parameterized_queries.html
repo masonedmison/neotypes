@@ -31,7 +31,7 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="k">val</span> <span class="nv">born</span> <span class="k">=</span> <span class="mi">1980</span>
 <span class="c1">// born: Int = 1980</span>
 <span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: Test { name: $name, "</span> <span class="o">+</span> <span class="n">c</span><span class="s">"born: $born })"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@4884f01d</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@289e5d95</span>
 <span class="nv">query1</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res2: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (a: Test { name: $p1, born: $p2 })",</span>
@@ -45,7 +45,7 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="k">val</span> <span class="nv">LABEL</span> <span class="k">=</span> <span class="s">"User"</span>
 <span class="c1">// LABEL: String = "User"</span>
 <span class="k">val</span> <span class="nv">query2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: "</span> <span class="o">+</span> <span class="nc">LABEL</span> <span class="o">+</span> <span class="n">c</span><span class="s">"{ name: $name })"</span>
-<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@78f5bcbc</span>
+<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@9882f55</span>
 <span class="nv">query2</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res3: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (a: User { name: $p1 })",</span>
@@ -70,7 +70,7 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="c1">// hasCat: HasCat = HasCat(2010)</span>
 
 <span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (u: User { $user })"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@53b52f9c</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@320127d0</span>
 <span class="nv">query1</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res4: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (u: User { name: $p1, born: $p2 })",</span>
@@ -82,7 +82,7 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="c1">// )</span>
 
 <span class="k">val</span> <span class="nv">query2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (u: User { $user })-[r: HAS_CAT { $hasCat }]-&gt;(c: Cat { $cat }) RETURN r"</span>
-<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@2a60c673</span>
+<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@1a19e031</span>
 <span class="nv">query2</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">HasCat</span><span class="o">]</span>
 <span class="c1">// res5: neotypes.DeferredQuery[HasCat] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (u: User { name: $p1, born: $p2 })-[r: HAS_CAT { since: $p3 }]-&gt;(c: Cat { tag: $p4 }) RETURN r",</span>
