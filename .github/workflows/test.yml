@@ -26,7 +26,6 @@ jobs:
           repository: neotypes/neotypes
           releases-only: false
         id: latestTag
-
       - run: echo "Latest release ${{ steps.latestTag.outputs.tag }}"
 
       - name: Setup Java
