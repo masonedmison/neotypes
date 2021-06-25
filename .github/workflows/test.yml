@@ -20,6 +20,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Find latest tag
+        uses: oprypin/find-latest-tag@v1
+        with:
+          repository: neotypes/neotypes
+          releases-only: false
+        id: latestTag
+
+      - run: echo "Latest release ${{ steps.latestTag.outputs.tag }}"
+
       - name: Setup Java
         uses: olafurpg/setup-scala@v10
         with:
