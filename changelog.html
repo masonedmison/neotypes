@@ -1,8 +1,25 @@
 <!DOCTYPE html><html><head><title>neotypes: Changelog</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="neotypes" /><meta name="description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><meta name="og:image" content="/neotypes/img/poster.png" /><meta name="image" property="og:image" content="/neotypes/img/poster.png" /><meta name="og:title" content="neotypes: Changelog" /><meta name="title" property="og:title" content="neotypes: Changelog" /><meta name="og:site_name" content="neotypes" /><meta name="og:url" content="https://neotypes.github.io/neotypes/" /><meta name="og:type" content="website" /><meta name="og:description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><link rel="icon" type="image/png" href="/neotypes/img/favicon.png" /><meta name="twitter:title" content="neotypes: Changelog" /><meta name="twitter:image" content="/neotypes/img/poster.png" /><meta name="twitter:description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/neotypes/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/neotypes/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/neotypes/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/neotypes/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/neotypes/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/neotypes/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/neotypes/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/neotypes/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/neotypes/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/neotypes/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/neotypes/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/neotypes/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/neotypes/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/neotypes/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/neotypes/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/neotypes/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/neotypes/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/neotypes/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/neotypes/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/neotypes/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/neotypes/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/neotypes/css/pattern-style.css" /><link rel="stylesheet" href="/neotypes/css/style.css" /></head><body><header id="site-header"><div class="navbar-wrapper navbar-inverse"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/neotypes/" class="brand"><div class="icon-wrapper"><span>neotypes</span></div></a></div><nav class="text-right"><ul class=""><li class="search-nav hidden-xs"><div id="search-dropdown"><label><i class="fa fa-search"></i>Search</label><input id="search-bar" type="text" placeholder="Enter keywords here..." onclick="displayToggleSearch(event)" /><ul id="search-dropdown-content" class="dropdown dropdown-content"></ul></div></li><li><a class="transparent-on-hover" href="https://github.com/neotypes/neotypes" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i><span class="hidden-sm hidden-xs">GitHub</span></a></li><li><a class="transparent-on-hover" href="/neotypes/api/neotypes/index.html"><i class="fa fa-file-text"></i><span class="hidden-sm hidden-xs">API Documentation</span></a></li></ul></nav></div></div><div class="jumbotron" style="background-image:url('/neotypes/img/jumbotron_pattern.png')"></div><div id="horizontal-menu"><ul class="horizontal-nav"><li><a class="" href="/neotypes/">Home</a></li><li><a class="" href="/neotypes/overview.html">Overview</a></li><li><a class="" href="/neotypes/parameterized_queries.html">Parameterized Queries</a></li><li><a class="" href="/neotypes/types.html">Supported types</a></li><li><a class="" href="/neotypes/alternative_effects.html">Alternative effects</a></li><li><a class="" href="/neotypes/streams.html">Streaming</a></li><li><a class="" href="/neotypes/driver_transaction.html">Transactions</a></li><li><a class=" active " href="/neotypes/changelog.html">Changelog</a></li></ul></div></header><main id="site-main" class="page-site-main"><section class="use"><div class="container"><div id="content"><h1 id="changelog">Changelog</h1>
 
-<h2 id="v0181-2021-06-08">v0.18.1 <em>(2021-06-08)</em></h2>
+<h2 id="v0183-2021-06-25">v0.18.3 <em>(2021-06-25)</em></h2>
 
-<p>(v0.18.0 was published by accident)</p>
+<h3 id="reverting-the-neo4j797-workaround-364">Reverting the neo4j#797 workaround (<a href="https://github.com/neotypes/neotypes/pull/364" target="_blank">#364</a>)</h3>
+
+<p>This is just an internal code refactor thanks to a bug fix in the underlying <strong>Java</strong> driver.</p>
+
+<p>However, this refactor implies that users need to update their underlying <strong>Java</strong> driver
+to the latest patch versions.<br />
+As of the writing date: <code class="highlighter-rouge">4.3.2</code>, <code class="highlighter-rouge">4.2.7</code> &amp; <code class="highlighter-rouge">4.1.4</code>; <code class="highlighter-rouge">4.0</code> seems to be not longer maintained.</p>
+
+<h2 id="v0182-2021-06-16">v0.18.2 <em>(2021-06-16)</em></h2>
+
+<h3 id="dont-override-drivers-tx-config-from-deferredquery-362">Don’t override driver’s tx-config from DeferredQuery (<a href="https://github.com/neotypes/neotypes/pull/362" target="_blank">#362</a>)</h3>
+
+<p>This a bug fix that complements #341</p>
+
+<p>It ensures that when you run a query using the standard <strong>DeferredQuery</strong> syntax,
+it would respect the current <strong>Driver’s</strong> default config.</p>
+
+<h2 id="v0181-2021-06-08">v0.18.1 <em>(2021-06-08)</em></h2>
 
 <h3 id="update-organization-id-359">Update organization id (<a href="https://github.com/neotypes/neotypes/pull/359" target="_blank">#359</a>)</h3>
 
@@ -55,6 +72,12 @@ this method can be used to crate a new <code class="highlighter-rouge">Driver[F]
 will be the one passed to the previous method.</p>
 
 <p>This is very useful when you need to use a custom config across all the application, or for tests.</p>
+
+<h2 id="v0180-2021-06-08">v0.18.0 <em>(2021-06-08)</em></h2>
+
+<p><strong>DO NOT USE!</strong></p>
+
+<p><code class="highlighter-rouge">v0.18.0</code> was published by accident, use <code class="highlighter-rouge">v0.18.1</code> which contains all the planned changes for this version.</p>
 
 <h2 id="v0170-2021-04-04">v0.17.0 <em>(2021-04-04)</em></h2>
 
@@ -114,9 +137,9 @@ will be the one passed to the previous method.</p>
 
 <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Id</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">AnyVal</span>
 <span class="k">implicit</span> <span class="k">final</span> <span class="k">val</span> <span class="nv">idParameterMapper</span><span class="k">:</span> <span class="kt">ParameterMapper</span><span class="o">[</span><span class="kt">Id</span><span class="o">]</span> <span class="k">=</span> <span class="nv">semiauto</span><span class="o">.</span><span class="py">deriveUnwrappedParameterMapper</span>
-<span class="c1">// idParameterMapper: ParameterMapper[Id] = neotypes.mappers$ParameterMapper$$anon$29@10a54d62</span>
+<span class="c1">// idParameterMapper: ParameterMapper[Id] = neotypes.mappers$ParameterMapper$$anon$29@740c21b0</span>
 <span class="k">implicit</span> <span class="k">final</span> <span class="k">val</span> <span class="nv">idValueMapper</span><span class="k">:</span> <span class="kt">ValueMapper</span><span class="o">[</span><span class="kt">Id</span><span class="o">]</span> <span class="k">=</span> <span class="nv">semiauto</span><span class="o">.</span><span class="py">deriveUnwrappedValueMapper</span>
-<span class="c1">// idValueMapper: ValueMapper[Id] = neotypes.mappers$ValueMapper$$anon$14@38e01c39</span>
+<span class="c1">// idValueMapper: ValueMapper[Id] = neotypes.mappers$ValueMapper$$anon$14@4933750f</span>
 </code></pre></div></div>
 
 <blockquote>
