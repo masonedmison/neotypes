@@ -301,9 +301,9 @@ We recommend using <a href="https://github.com/estatico/scala-newtype"><strong>s
 
 <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Id</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">AnyVal</span>
 <span class="k">implicit</span> <span class="k">final</span> <span class="k">val</span> <span class="nv">idParameterMapper</span><span class="k">:</span> <span class="kt">ParameterMapper</span><span class="o">[</span><span class="kt">Id</span><span class="o">]</span> <span class="k">=</span> <span class="nv">semiauto</span><span class="o">.</span><span class="py">deriveUnwrappedParameterMapper</span>
-<span class="c1">// idParameterMapper: ParameterMapper[Id] = neotypes.mappers$ParameterMapper$$anon$29@12eb6945</span>
+<span class="c1">// idParameterMapper: ParameterMapper[Id] = neotypes.mappers$ParameterMapper$$anon$29@666acabc</span>
 <span class="k">implicit</span> <span class="k">final</span> <span class="k">val</span> <span class="nv">idValueMapper</span><span class="k">:</span> <span class="kt">ValueMapper</span><span class="o">[</span><span class="kt">Id</span><span class="o">]</span> <span class="k">=</span> <span class="nv">semiauto</span><span class="o">.</span><span class="py">deriveUnwrappedValueMapper</span>
-<span class="c1">// idValueMapper: ValueMapper[Id] = neotypes.mappers$ValueMapper$$anon$14@25a11dd5</span>
+<span class="c1">// idValueMapper: ValueMapper[Id] = neotypes.mappers$ValueMapper$$anon$14@74b1454a</span>
 </code></pre></div></div>
 
 <blockquote>
