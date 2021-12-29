@@ -19,7 +19,9 @@ object ReprResultMapper {
     nmap.keys.asScala.iterator.map(key => key -> nmap.get(key))
 
   implicit final val HNilResultMapper: ReprResultMapper[HNil] = {
-    val rm = ResultMapper.fromValueMapper[HNil](ValueMapper.HNilMapper)
+    // val rm = ResultMapper.fromValueMapper[HNil](ValueMapper.HNilMapper)
+    // TODO HNil mapper coming from orphan instances package obj
+    val rm = ResultMapper.fromValueMapper[HNil](HNilMapper)
 
     new ReprResultMapper[HNil] {
       override def to(value: List[(String, Value)], typeHint: Option[TypeHint]): Either[Throwable, HNil] =

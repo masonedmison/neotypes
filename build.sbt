@@ -129,7 +129,7 @@ lazy val core = (project in file("core"))
       PROVIDED(
         "org.neo4j.driver" % "neo4j-java-driver" % neo4jDriverVersion
       ) ++ COMPILE(
-        "com.chuusai" %% "shapeless" % shapelessVersion,
+        // "com.chuusai" %% "shapeless" % shapelessVersion,
         "org.scala-lang.modules" %% "scala-collection-compat" % scalaCollectionCompatVersion,
         scalaVersion("org.scala-lang" % "scala-reflect" % _).value
       ) ++ TEST(
@@ -139,7 +139,8 @@ lazy val core = (project in file("core"))
         "org.testcontainers" % "neo4j" % testcontainersNeo4jVersion,
         "org.mockito" % "mockito-all" % mockitoVersion,
         "ch.qos.logback" % "logback-classic" % logbackVersion
-      )
+      ),
+      dependsOn()
   )
 
 def enablePartialUnificationIn2_12(scalaVersion: String) =
@@ -261,6 +262,17 @@ lazy val enumeratum = (project in file("enumeratum"))
     libraryDependencies ++= PROVIDED(
       "com.beachape" %% "enumeratum" % enumeratumVersion
     )
+  )
+
+lazy val generic = (project in file("generic"))  
+  .dependsOn(core % "compile->compile;test->test;provided->provided")
+  .settings(commonSettings)
+  .settings(
+    name := "neotypes-generic",
+    libraryDependencies ++= COMPILE(
+      "com.chuusai" %% "shapeless" % shapelessVersion,
+      scalaVersion("org.scala-lang" % "scala-reflect" % _).value
+    ),
   )
 
 lazy val docsMappingsAPIDir = settingKey[String]("Name of subdirectory in site target directory for api docs")
