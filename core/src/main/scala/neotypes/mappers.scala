@@ -13,7 +13,7 @@ import org.neo4j.driver.internal.value.{MapValue, NodeValue, RelationshipValue}
 import org.neo4j.driver.Value
 import org.neo4j.driver.summary.ResultSummary
 import org.neo4j.driver.types.{IsoDuration, MapAccessor => NMap, Node, Path => NPath, Point, Relationship}
-import shapeless.HNil
+// import shapeless.HNil
 
 import scala.collection.Iterable
 import scala.collection.compat._
@@ -482,8 +482,10 @@ object mappers {
     implicit final val FloatValueMapper: ValueMapper[Float] =
       ValueMapper.fromCast(v => v.asFloat)
 
-    implicit final val HNilMapper: ValueMapper[HNil] =
-      ValueMapper.const(HNil)
+
+    // TODO moved temporarily to generic orphan instances
+    // implicit final val HNilMapper: ValueMapper[HNil] =
+    //   ValueMapper.const(HNil)
 
     implicit final val IntValueMapper: ValueMapper[Int] =
       ValueMapper.fromCast(v => v.asInt)
