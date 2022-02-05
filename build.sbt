@@ -2,13 +2,13 @@ import Dependencies._
 import xerial.sbt.Sonatype._
 import ReleaseTransformations._
 
-val neo4jDriverVersion = "4.4.2"
+val neo4jDriverVersion = "4.4.3"
 val scalaCollectionCompatVersion = "2.6.0"
 val shapelessVersion = "2.3.7"
-val testcontainersNeo4jVersion = "1.16.2"
-val testcontainersScalaVersion = "0.39.12"
+val testcontainersNeo4jVersion = "1.16.3"
+val testcontainersScalaVersion = "0.40.0"
 val mockitoVersion = "1.10.19"
-val scalaTestVersion = "3.2.10"
+val scalaTestVersion = "3.2.11"
 val logbackVersion = "1.2.10"
 val catsVersion = "2.7.0"
 val catsEffectsVersion = "2.5.4"
@@ -16,7 +16,7 @@ val monixVersion = "3.4.0"
 val akkaStreamVersion = "2.6.18"
 val fs2Version = "2.5.10"
 val zioVersion = "1.0.13"
-val zioInteropReactiveStreamsVersion = "1.3.8"
+val zioInteropReactiveStreamsVersion = "1.3.9"
 val refinedVersion = "0.9.28"
 val enumeratumVersion = "1.7.0"
 
@@ -50,7 +50,7 @@ ThisBuild / scmInfo ~= {
 
 // Global settings.
 ThisBuild / scalaVersion := "2.12.15"
-ThisBuild / crossScalaVersions := Seq("2.12.15", "2.13.7")
+ThisBuild / crossScalaVersions := Seq("2.12.15", "2.13.8")
 ThisBuild / organization := "io.github.neotypes"
 ThisBuild / versionScheme := Some("semver-spec")
 
@@ -129,7 +129,7 @@ lazy val core = (project in file("core"))
       PROVIDED(
         "org.neo4j.driver" % "neo4j-java-driver" % neo4jDriverVersion
       ) ++ COMPILE(
-        "com.chuusai" %% "shapeless" % shapelessVersion,
+        // "com.chuusai" %% "shapeless" % shapelessVersion,
         "org.scala-lang.modules" %% "scala-collection-compat" % scalaCollectionCompatVersion,
         scalaVersion("org.scala-lang" % "scala-reflect" % _).value
       ) ++ TEST(
@@ -139,7 +139,8 @@ lazy val core = (project in file("core"))
         "org.testcontainers" % "neo4j" % testcontainersNeo4jVersion,
         "org.mockito" % "mockito-all" % mockitoVersion,
         "ch.qos.logback" % "logback-classic" % logbackVersion
-      )
+      ),
+      dependsOn()
   )
 
 def enablePartialUnificationIn2_12(scalaVersion: String) =
@@ -261,6 +262,17 @@ lazy val enumeratum = (project in file("enumeratum"))
     libraryDependencies ++= PROVIDED(
       "com.beachape" %% "enumeratum" % enumeratumVersion
     )
+  )
+
+lazy val generic = (project in file("generic"))  
+  .dependsOn(core % "compile->compile;test->test;provided->provided")
+  .settings(commonSettings)
+  .settings(
+    name := "neotypes-generic",
+    libraryDependencies ++= COMPILE(
+      "com.chuusai" %% "shapeless" % shapelessVersion,
+      scalaVersion("org.scala-lang" % "scala-reflect" % _).value
+    ),
   )
 
 lazy val docsMappingsAPIDir = settingKey[String]("Name of subdirectory in site target directory for api docs")
